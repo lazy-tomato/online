@@ -15,7 +15,7 @@ export default defineUserConfig({
   lang: 'zh-CN', // 语言
   title: 'tomato', // header区域的标题
   description: '用于记录自己学习笔记的网站。作者：番茄', // 说明
-  base: '/',
+  base: '/onlineBlog/',
   dest: './dist',
   head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
   locales: {
