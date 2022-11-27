@@ -9,6 +9,8 @@
 import fs from 'fs'
 import path from 'path'
 
+const whiteList = ['README.md']
+
 export function getSonDirList(selfDirname) {
   var dir = path.resolve(__dirname, '../../', selfDirname)
   var filesList = []
@@ -16,23 +18,25 @@ export function getSonDirList(selfDirname) {
   const files = fs.readdirSync(dir)
 
   files.forEach((item, index) => {
-    filesList.push({
-      text: item,
-      collapsible: true,
-      children: [],
-    })
-
-    var fullPath = path.join(dir, item)
-    const stat = fs.statSync(fullPath)
-    if (stat.isDirectory()) {
-      const files = fs.readdirSync(path.resolve(dir, item))
-      filesList[index]['children'] = files.map((item2) => {
-        console.log('/' + selfDirname + '/' + item + '/' + item2)
-        return {
-          text: item2.replace('.md', ''),
-          link: '/' + selfDirname + '/' + item + '/' + item2,
-        }
+    if (whiteList.indexOf(item) === -1) {
+      filesList.push({
+        text: item,
+        collapsible: true,
+        children: [],
       })
+
+      var fullPath = path.join(dir, item)
+      const stat = fs.statSync(fullPath)
+      if (stat.isDirectory()) {
+        const files = fs.readdirSync(path.resolve(dir, item))
+        filesList[filesList.length - 1]['children'] = files.map((ele) => {
+          console.log('/' + selfDirname + '/' + item + '/' + ele)
+          return {
+            text: ele.replace('.md', ''),
+            link: '/' + selfDirname + '/' + item + '/' + ele,
+          }
+        })
+      }
     }
   })
 
