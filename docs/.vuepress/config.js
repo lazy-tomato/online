@@ -17,7 +17,17 @@ export default defineUserConfig({
   description: '用于记录自己学习笔记的网站。作者：番茄', // 说明
   base: '/onlineBlog/',
   dest: './dist',
-  head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+  head: [
+    [
+      'link',
+      {
+        rel: 'shortcut icon',
+        type: 'image/x-icon',
+        href: `/images/favicon.ico`,
+      },
+    ],
+  ],
+
   locales: {
     '/': {
       lang: 'zh-CN',

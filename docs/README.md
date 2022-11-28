@@ -6,7 +6,7 @@ tagline: 番茄的博客
 
 actions:
   - text: 开始阅读
-    link: /guide/
+    link: /group/
     type: secondary
 
 features:
