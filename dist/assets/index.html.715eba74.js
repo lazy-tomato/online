@@ -1,1 +1,0 @@
-import{_ as t,o as a,c,a as e,b as n}from"./app.d5e55042.js";const o={},r=e("h1",{id:"记录自己的收获",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#记录自己的收获","aria-hidden":"true"},"#"),n(" 记录自己的收获")],-1),s=[r];function _(d,i){return a(),c("div",null,s)}const l=t(o,[["render",_],["__file","index.html.vue"]]);export{l as default};
