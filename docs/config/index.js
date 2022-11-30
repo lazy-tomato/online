@@ -17,6 +17,10 @@ export const navbar = [
     text: '成长',
     link: '/group/',
   },
+  {
+    text: 'JavaScript基础',
+    link: '/up/',
+  },
   // NavbarGroup
   // {
   //   text: 'Group',
@@ -30,4 +34,5 @@ export const navbar = [
 export const sidebar = {
   '/interView/': getSonDirList('interView'),
   '/group/': getSonDirList('group'),
+  '/up/': getSonDirList('up'),
 }
