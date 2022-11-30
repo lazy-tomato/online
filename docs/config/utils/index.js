@@ -30,7 +30,6 @@ export function getSonDirList(selfDirname) {
       if (stat.isDirectory()) {
         const files = fs.readdirSync(path.resolve(dir, item))
         filesList[filesList.length - 1]['children'] = files.map((ele) => {
-          console.log('/' + selfDirname + '/' + item + '/' + ele)
           return {
             text: ele.replace('.md', ''),
             link: '/' + selfDirname + '/' + item + '/' + ele,
