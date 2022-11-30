@@ -23,7 +23,7 @@ export default defineUserConfig({
       {
         rel: 'shortcut icon',
         type: 'image/x-icon',
-        href: `./images/favicon.ico`,
+        href: '/onlineBlog/images/favicon.ico',
       },
     ],
   ],
