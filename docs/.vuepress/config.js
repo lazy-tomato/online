@@ -38,7 +38,7 @@ export default defineUserConfig({
     repo: 'https://github.com/lazy-tomato/online', // 仓库信息
     repoLabel: 'Github', // 仓库名称
     editLink: false, // 是否启用编辑链接
-    lastUpdated: true,
+    lastUpdated: false, // 是否启用最后更新
     // subSidebar: 'auto',
     /* 导航菜单 */
     navbar: navbar,
