@@ -18,7 +18,7 @@ export const navbar = [
     link: '/group/',
   },
   {
-    text: 'JavaScript基础',
+    text: '变秃了也变强了',
     link: '/up/',
   },
   // NavbarGroup
