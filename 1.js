@@ -1,25 +1,29 @@
-var mySqrt = function (x) {
-  if (x === 0 || x === 1) {
-    return x
-  }
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function (nums, target) {
+  var l = 0
+  var r = nums.length - 1
 
-  let left = 1
-  let right = x
+  while (l <= r) {
+    // 差值除以2加上左侧数据
+    var mid = Math.floor((r - l) / 2 + l)
 
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2)
+    var temp = nums[mid]
 
-    if (mid * mid === x) {
+    if (target === temp) {
       return mid
-    }
-    if (mid * mid < x) {
-      left = mid + 1
+    } else if (target < temp) {
+      r = mid - 1
     } else {
-      right = mid - 1
+      l = mid + 1
     }
   }
 
-  return right
+  return -1
 }
 
-console.log(mySqrt(3))
+console.log(search([-1, 0, 3, 5, 9, 12]))
+console.log(search([-1, 0, 3, 5, 9, 12]))
