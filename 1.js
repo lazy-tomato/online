@@ -1,29 +1,63 @@
 /**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
+ * @param {string} s
+ * @param {string} t
+ * @return {character}
  */
-var search = function (nums, target) {
-  var l = 0
-  var r = nums.length - 1
+// var findTheDifference = function (s, t) {
+//   s = s.split('')
+//   for (let i = 0; i < t.length; i++) {
+//     let temp = s.indexOf(t[i])
+//     if (temp !== -1) {
+//       s.splice(temp, 1)
+//     } else {
+//       return t[i]
+//     }
+//   }
+// }
+/* 
 
-  while (l <= r) {
-    // 差值除以2加上左侧数据
-    var mid = Math.floor((r - l) / 2 + l)
+输入：s = "abcd", t = "abcde"
+输出："e"
+解释：'e' 是那个被添加的字母。
 
-    var temp = nums[mid]
+输入：s = "", t = "y"
+输出："y"
 
-    if (target === temp) {
-      return mid
-    } else if (target < temp) {
-      r = mid - 1
-    } else {
-      l = mid + 1
-    }
+*/
+
+var findTheDifference = function (s, t) {
+  let ret = 0
+  for (const ch of s) {
+    console.log(111, binary(ret), binary(ch.charCodeAt()))
+
+    ret ^= ch.charCodeAt()
+  }
+  for (const ch of t) {
+    console.log(222, binary(ret), binary(ch.charCodeAt()))
+    ret ^= ch.charCodeAt()
   }
 
-  return -1
+  console.log(333, binary(ret))
+
+  return String.fromCharCode(ret)
 }
 
-console.log(search([-1, 0, 3, 5, 9, 12]))
-console.log(search([-1, 0, 3, 5, 9, 12]))
+console.log(findTheDifference('abcd', 'abcde'))
+console.log(findTheDifference('', 'y'))
+
+function binary(num) {
+  var resArry = []
+  var xresArry = []
+  i = 0
+  //除2取余
+  for (; num > 0; ) {
+    resArry.push(num % 2)
+    num = parseInt(num / 2)
+    i++
+  }
+  //倒序排列
+  for (j = i - 1; j >= 0; j--) {
+    xresArry.push(resArry[j])
+  }
+  return xresArry.join().replace(/,/g, '')
+}
