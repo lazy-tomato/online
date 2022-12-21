@@ -1,63 +1,35 @@
-/**
- * @param {string} s
- * @param {string} t
- * @return {character}
- */
-// var findTheDifference = function (s, t) {
-//   s = s.split('')
-//   for (let i = 0; i < t.length; i++) {
-//     let temp = s.indexOf(t[i])
-//     if (temp !== -1) {
-//       s.splice(temp, 1)
-//     } else {
-//       return t[i]
-//     }
-//   }
-// }
-/* 
+Function.prototype.bind2 = function (context) {
+  // 1.新指向的this
+  context = Object(context) || window
+  // 2.调用bind2传入的参数
+  var args = Array.prototype.slice.call(arguments, 1)
+  // 3.调用bind2的函数
+  var self = this
 
-输入：s = "abcd", t = "abcde"
-输出："e"
-解释：'e' 是那个被添加的字母。
+  var temp = function () {}
 
-输入：s = "", t = "y"
-输出："y"
+  // 4. 定义一个函数，当做bind2的返回值
+  var fn = function () {
+    // 5. 返回的函数，获取到的参数
+    var args2 = Array.prototype.slice.call(arguments, 1)
 
-*/
-
-var findTheDifference = function (s, t) {
-  let ret = 0
-  for (const ch of s) {
-    console.log(111, binary(ret), binary(ch.charCodeAt()))
-
-    ret ^= ch.charCodeAt()
-  }
-  for (const ch of t) {
-    console.log(222, binary(ret), binary(ch.charCodeAt()))
-    ret ^= ch.charCodeAt()
+    // self.apply(context, args2.concat(args))
+    // 6. 处理new的情况
+    self.apply(this instanceof temp ? this : context, args2.concat(args))
   }
 
-  console.log(333, binary(ret))
+  // 7. 处理一下 fn的原型和this的原型
+  temp.prototype = this.prototype
+  fn.prototype = new temp()
 
-  return String.fromCharCode(ret)
+  return fn
 }
 
-console.log(findTheDifference('abcd', 'abcde'))
-console.log(findTheDifference('', 'y'))
-
-function binary(num) {
-  var resArry = []
-  var xresArry = []
-  i = 0
-  //除2取余
-  for (; num > 0; ) {
-    resArry.push(num % 2)
-    num = parseInt(num / 2)
-    i++
-  }
-  //倒序排列
-  for (j = i - 1; j >= 0; j--) {
-    xresArry.push(resArry[j])
-  }
-  return xresArry.join().replace(/,/g, '')
+function swq() {
+  // console.log(1, this.name)
 }
+
+var f = swq.bind2({ name: 'swq' })
+
+var s = new f()
+// console.log(s)
