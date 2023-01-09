@@ -6,7 +6,7 @@ tagline: 番茄的博客
 
 actions:
   - text: 开始阅读
-    link: /group/
+    link: /up/
     type: secondary
 
 features:
@@ -14,6 +14,6 @@ features:
     details: 一个爱吃番茄的程序员。
   - title: 目标
     details: 记录自己的笔记。
-footer: MIT Licensed | Copyright © 2022-present lazy_tomato
+footer: MIT Licensed | Copyright © 2023-present lazy_tomato
 footerHtml: true
 ---
