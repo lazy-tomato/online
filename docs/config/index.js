@@ -9,10 +9,10 @@
 import { getSonDirList } from './utils/index'
 
 export const navbar = [
-  // {
-  //   text: '面试',
-  //   link: '/interView/',
-  // },
+  {
+    text: '面试',
+    link: '/interView/',
+  },
   {
     text: '成长',
     link: '/group/',
