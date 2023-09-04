@@ -21,6 +21,10 @@ export const navbar = [
     text: '变秃了也变强了',
     link: '/up/',
   },
+  {
+    text: '打卡',
+    link: '/clockIn/',
+  },
   // NavbarGroup
   // {
   //   text: 'Group',
@@ -35,4 +39,5 @@ export const sidebar = {
   '/interView/': getSonDirList('interView'),
   '/group/': getSonDirList('group'),
   '/up/': getSonDirList('up'),
+  '/clockIn/': getSonDirList('clockIn'),
 }
