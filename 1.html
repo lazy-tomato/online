@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: lightgray;
+      box-sizing: border-box;
+      box-sizing: content-box;
+
+    }
+
+    body {
+      position: relative;
+    }
+
+    .container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    123
+  </div>
+
+  <script>
+    // JSON.parse(JSON.stringify())
+
+    function swq(v) {
+      console.log(/\S{5}/.test(v));
+      if (/\S{5}/.test(v)) {
+        return v.replace(/\s/g, '').replace(/(.{4})/g, '$1 ');
+      }
+    };
+
+
+    console.log(swq("421125199710070314"))
+
+  </script>
+
+</body>
+
+</html>
